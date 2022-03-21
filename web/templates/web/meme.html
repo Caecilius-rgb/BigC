@@ -1,0 +1,102 @@
+{% load static %}
+
+<script>
+    var Flashbang = new Audio ();
+    Flashbang.src = "/static/web/Flashbang.mp3"
+
+    function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+        currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+    }
+
+    function Flashbody() {
+    var body = document.body;
+    body.classList.toggle("flashbang");
+    }
+
+    function sound() {
+        Flashbang.play()
+    }
+
+    function back() {
+        body.classList.toggle("normal");
+    }
+</script>
+
+<!--body.classList.toggle("normal");-->
+
+<style>
+    body {
+        background-color: black;
+        color: #f609dd;
+        margin-left: 0;
+    }
+    .flashbang {
+        background-color: white;
+        color: white;
+    }
+    .normal {
+        background-color: black;
+        color: #f609dd;
+        margin-left: 0;
+    }
+ 
+    .center {
+         text-align: center;
+         padding-top: 200px;
+     }
+     .tiny {
+         font-size: 10px;
+         color: #ff0007;
+         text-align: center;
+     }
+     .sidenav {
+     height: 100%;
+     width: 160px;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: #111;
+     overflow-x: hidden;
+     padding-top: 20px;
+     }
+ 
+     .sidenav a {
+     padding: 6px 8px 6px 16px;
+     text-decoration: none;
+     font-size: 22px;
+     color: #818181;
+     display: block;
+     }
+ 
+     .sidenav a:hover {
+     color: white;
+     }
+ </style>
+ 
+ <html>
+     <head>
+         <title>BIG C</title>
+     </head>
+     <body id="body">
+         
+         <div id="nav" class="sidenav">
+             <a href="/BigC">Who Is Big C?</a>
+             <a href="/E">Lean</a>
+         </div>
+
+         <div class="center">
+             click me ;)
+         </div>
+        
+        <script>
+            document.addEventListener("mousedown", function(){
+                sound(); Flashbody(); setTimeout(back, 4943);
+            }); 
+        </script>
+     </body>
+ </html>
